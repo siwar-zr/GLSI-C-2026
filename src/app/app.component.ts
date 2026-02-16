@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLinkWithHref, RouterLink } from '@angular/router';
 import { AdminComponent } from "./components/admin/admin.component";
 import { UserComponent } from "./components/user/user.component";
 import { DataBindingComponent } from "./components/data-binding/data-binding.component";
@@ -11,7 +11,7 @@ import { ControlStatementComponent } from './components/control-statement/contro
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ControlStatementComponent],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
