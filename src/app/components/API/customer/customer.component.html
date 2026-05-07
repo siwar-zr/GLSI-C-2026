@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h4>Customer List</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Username</th>
+                            <th>EmailId</th>
+                            <th>Fullname</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (item of customerArray; track $index) {
+                            <tr>
+                                <td>{{$index+1}}</td>
+                                <td>{{item.userName}}</td>
+                                <td>{{item.emailId}}</td>
+                                <td>{{item.fullName}}</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h4>New Customer Form</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Username</label>
+                        <input type="text" [(ngModel)]="customerObj.userName" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">EmailId</label>
+                        <input type="text" [(ngModel)]="customerObj.emailId" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Fullname</label>
+                        <input type="text" [(ngModel)]="customerObj.fullName" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Password</label>
+                        <input type="text" [(ngModel)]="customerObj.password" class="form-control">
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-6 text-center">
+                        <button class="btn btn-secondary">Reset</button>
+                    </div>
+                    <div class="col-6 text-center">
+                        <button class="btn btn-success" (click)="onSaveCustomer()">Save Customer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
